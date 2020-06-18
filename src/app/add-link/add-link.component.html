@@ -1,0 +1,45 @@
+
+<div class="container">
+    <button type="button" class="btn btn-primary floatright" (click) = "show()">Add link</button>
+     </div>
+  <!-- Creates the bootstrap modal where the image will appear -->
+  <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add node</h4>
+      </div>
+      <div class="modal-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      <div class="row">
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                                  <label>Source Node</label>
+                                  <input type="text" formControlName="sourcenode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sourcenode.errors }" />
+                                  <div *ngIf="submitted && f.sourcenode.errors" class="invalid-feedback">
+                                        <div *ngIf="f.sourcenode.errors.required">Source Node is required</div>
+                                  </div>
+                               </div>
+                         </div> 
+                         <div class="col-sm-6">
+                            <div class="form-group">
+                               <label>Target node</label>
+                               <input type="text" formControlName="targetnode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.targetnode.errors }" />
+                               <div *ngIf="submitted && f.targetnode.errors" class="invalid-feedback">
+                                  <div *ngIf="f.targetnode.errors.required">Target Node is required</div>
+                               </div>
+                            </div>
+                         </div>
+             </div>
+             <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+     
+    
+ </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</button>
+      
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,27 @@
+<!-- <button class="float-left">Side bar</button> -->
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+    
+    <div id="list1" class="dropdown-check-list" tabindex="100">
+      <button class="btn">Select Property</button>
+        <!-- <span class="anchor">Select Fruits</span> -->
+        <ul class="items">
+            <li><input type="checkbox" id="nodename" (click)="checkboxDisplay()" />Node name </li>
+            <li><input type="checkbox" id="status" (click)="checkboxDisplay()" />Status</li>
+            <li><input type="checkbox" id="ip" (click)="checkboxDisplay()" />IP Address </li>
+           
+            
+        </ul>
+    </div>
+  </div>
+  
+  <div id="main">
+    <button class="openbtn" (click)="openNav()">☰ Open Sidebar</button> 
+     
+    <p id="nodenametext" style="display:none">Name : {{nodes[0]?.name}}</p>
+<p id="statustext" style="display:none">Status : {{nodes[0]?.status}}</p>
+<p id="iptext" style="display:none">IP Address : {{nodes[0]?.ip}}</p>
+
+    
+  </div>

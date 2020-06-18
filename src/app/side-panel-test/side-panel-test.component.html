@@ -1,0 +1,65 @@
+<!-- <p class="float-left">side-panel-test works!</p> -->
+<br /><br />
+<button class="btn btn-primary" (click)="show()">Menu</button>
+<br /><br />
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" (click)="close()">×</a>
+<div
+  [style.display]="showmenu ? 'block' : 'none'"
+  id="menu-setting"
+  role="tablist"
+  class="panel-group m-t-20"
+>
+  <div class="panel panel-default">
+    <div role="tab" class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          role="button"
+          data-toggle="collapse"
+          data-parent="#menu-setting"
+          href="#add-map-setting"
+          >Map Settings</a
+        >
+      </h4>
+    </div>
+
+
+
+    <div id="add-map-setting" role="tabpanel" class="panel-collapse collapse">
+      <div class="panel-body item-body">
+        Map Setting
+        <ul class="items">
+          <li><input type="checkbox" id="nodename" (click)="checkboxDisplay()"/> Node name</li>
+          <li><input type="checkbox" id="status" (click)="checkboxDisplay()"/> Status</li>
+          <li><input type="checkbox" id="ip" (click)="checkboxDisplay()"/> IP Address</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div role="tab" class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          role="button"
+          data-toggle="collapse"
+          data-parent="#menu-setting"
+          href="#add-tree-view"
+          >Tree-view</a
+        >
+      </h4>
+    </div>
+    <div id="add-tree-view" role="tabpanel" class="panel-collapse collapse">
+      <div class="panel-body">
+        Tree-view body
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div>
+    <button class="btn btn-primary" (click)="close()">Close</button>
+  </div>
+</div>
+</div>
